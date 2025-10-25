@@ -2,75 +2,123 @@
 
 **A fully functional, biologically-grounded cognitive architecture implementing consciousness, memory, learning, and decision-making.**
 
-[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](https://github.com/yourrepo)
+[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](#)
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-complete-success.svg)](https://github.com/yourrepo)
+[![Status](https://img.shields.io/badge/status-complete-success.svg)](#)
+
+---
+
+## 📋 Table of Contents
+
+- [What is FDQC?](#-what-is-fdqc)
+- [Quick Start](#-quick-start)
+- [Key Features](#-key-features)
+- [Project Structure](#-project-structure)
+- [Demos](#-demos)
+- [Visualization](#-visualization)
+- [Scientific Grounding](#-scientific-grounding)
+- [Advanced Usage](#-advanced-usage)
+- [Testing & Validation](#-testing--validation)
+- [Performance](#-performance)
+- [Educational Use](#-educational-use)
+- [Extending FDQC](#-extending-fdqc)
+- [Known Limitations](#-known-limitations)
+- [Contributing](#-contributing)
+- [Additional Resources](#-additional-resources)
 
 ---
 
 ## 🧠 What is FDQC?
 
-FDQC (Free Energy, Dopamine, Quantum-inspired Consciousness) v4.0 is a **complete AI system** that integrates:
+FDQC (Free Energy, Dopamine, Quantum-inspired Consciousness) v4.0 is a **complete AI system** that integrates all major cognitive functions into a single, unified architecture.
 
-- **Perception**: Multi-modal sensory processing (visual, auditory, semantic)
-- **Memory**: Working memory, episodic memory, semantic memory
-- **Attention**: Resource allocation and selective focus
-- **Affect & Motivation**: Emotion, drives, and homeostasis
-- **Action Selection**: Decision-making and motor control
-- **Learning**: Dopamine-modulated reinforcement learning
-- **Consciousness**: Global workspace integration
+### 🎯 Features at a Glance
 
-**All parameters are biologically grounded. No ad hoc values. No magic numbers.**
+| Feature | Description | Biological Basis |
+|---------|-------------|------------------|
+| 👁️ **Perception** | Multi-modal sensory processing | Primary sensory cortices |
+| 🧠 **Memory** | Working (4-15), Episodic (10K), Semantic (50K) | Hippocampus, cortex |
+| 🎯 **Attention** | Resource allocation & selective focus | Frontoparietal network |
+| ❤️ **Affect** | Emotion, drives, homeostasis | Limbic system |
+| 🤖 **Action** | Decision-making & motor control | Motor cortex, basal ganglia |
+| 📚 **Learning** | Dopamine-modulated RL | Reward pathways |
+| ✨ **Consciousness** | Global workspace integration | Thalamocortical system |
+
+### 🔬 Why FDQC is Different
+
+- ✅ **All parameters biologically grounded** - No ad hoc values
+- ✅ **Complete integration** - Not isolated components
+- ✅ **Adaptive mechanisms** - No fixed thresholds
+- ✅ **Scientific rigor** - Full documentation with citations
+- ✅ **Ready to use** - Working code, not a prototype
 
 ---
 
 ## ⚡ Quick Start
 
+> **New users**: See [QUICK_START.md](QUICK_START.md) for a comprehensive 5-minute tutorial!
+
 ### Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/yourrepo/conscious.git
-cd conscious
+git clone <your-repo-url>
+cd fdqc
 
 # Install dependencies
-pip install numpy matplotlib scipy
+pip install -r requirements.txt
 
-# Run demo
+# Verify installation
+python -c "from fdqc_ai import FDQC_AI; print('✓ Installation successful!')"
+```
+
+### Run Examples
+
+```bash
+# Run simple example (recommended first step)
+python examples/simple_example.py
+
+# Run main interactive demo
 python fdqc_ai.py
+
+# Run comprehensive demo suite
+python demos/full_demo.py complete
 ```
 
 ### Basic Usage
 
 ```python
 from fdqc_ai import FDQC_AI
+import numpy as np
 
-# Create AI system
+# 1. Create AI system
 ai = FDQC_AI(name="MyAI", verbose=True)
 
-# Process text input
+# 2. Process text input
 result = ai.think("Hello world!")
+print(f"Valence: {result['valence']:.2f}, Arousal: {result['arousal']:.2f}")
 
-# Process visual input
-import numpy as np
+# 3. Process visual input
 image = np.random.randn(28, 28, 3)
 ai.perceive_image(image, label="test")
 
-# Make decision
+# 4. Make decision
 action = ai.decide("What should I do?")
+print(f"Decision: {action}")
 
-# Provide feedback
+# 5. Provide feedback (learning)
 ai.learn(reward=0.8, success=0.9)
 
-# Retrieve memories
+# 6. Retrieve memories
 memories = ai.remember("hello", k=3)
 
-# Introspect (metacognition)
+# 7. Introspect (metacognition)
 state = ai.introspect()
 
-# Get statistics
+# 8. Get statistics
 stats = ai.get_statistics()
+print(f"Episodes: {stats['n_episodes']}, Mean reward: {stats['mean_reward']:.2f}")
 ```
 
 ---
@@ -124,21 +172,35 @@ stats = ai.get_statistics()
 ## 📁 Project Structure
 
 ```
-Conscious/
+fdqc/
 ├── README.md                           # This file
+├── QUICK_START.md                      # 5-minute getting started guide
 ├── ARCHITECTURE.md                     # Detailed architecture documentation
+├── SYSTEM_OVERVIEW.md                  # Complete system summary
+├── INDEX.md                            # Documentation index
 ├── CODE_PARAMETER_CLEANUP_CHANGELOG.md # Parameter cleanup history
+├── TROUBLESHOOTING.md                  # Common issues and solutions
+├── requirements.txt                    # Python dependencies
+├── run_tests.sh                        # Test runner script
+│
 ├── fdqc_ai.py                          # Main AI interface (HIGH-LEVEL API)
 ├── fdqc_v4_demo_compact_CLEANED.py     # Core components (cleaned)
 ├── fdqc_v4_train_CLEANED.py            # Training with adaptive curriculum
+├── build_test.py                       # Build validation tests
+│
 ├── core/
 │   ├── __init__.py
 │   └── fdqc_core.py                    # Complete cognitive architecture
+│
 ├── utils/
 │   ├── __init__.py
 │   └── visualization.py                # Plotting and analysis tools
-└── demos/
-    └── full_demo.py                    # Comprehensive demonstrations
+│
+├── demos/
+│   └── full_demo.py                    # Comprehensive demonstrations
+│
+└── examples/
+    └── simple_example.py               # Minimal working example
 ```
 
 ---
@@ -148,35 +210,40 @@ Conscious/
 ### Run Complete Demo
 
 ```bash
-python demos/full_demo.py
+# Run all demonstrations
+python demos/full_demo.py complete
 ```
 
 ### Run Specific Demos
 
 ```bash
-# Basic cognition
+# Basic cognition - Simple thought processing
 python demos/full_demo.py basic
 
-# Visual perception
+# Visual perception - Image processing
 python demos/full_demo.py vision
 
-# Memory & learning
+# Memory & learning - Episodic and semantic memory
 python demos/full_demo.py memory
 
-# Decision making
+# Decision making - Action selection
 python demos/full_demo.py decision
 
-# Emotional dynamics
+# Emotional dynamics - Valence and arousal
 python demos/full_demo.py emotion
 
-# Crisis handling
+# Crisis handling - Resource escalation
 python demos/full_demo.py crisis
 
-# Consciousness & introspection
+# Consciousness & introspection - Global workspace
 python demos/full_demo.py consciousness
+```
 
-# Complete system demo
-python demos/full_demo.py complete
+### Simple Example
+
+```bash
+# Minimal working example (best for beginners)
+python examples/simple_example.py
 ```
 
 ---
@@ -302,11 +369,23 @@ trainer.save_results('training_results.npz')
 
 ## 🧪 Testing & Validation
 
-### Unit Tests
+### Run Tests
 
 ```bash
-# Run tests (if available)
-pytest tests/
+# Run validation tests
+bash run_tests.sh
+
+# Or run Python build test directly
+python build_test.py
+```
+
+### Quick Verification
+
+```python
+# Verify installation
+from fdqc_ai import FDQC_AI
+ai = FDQC_AI()
+print("✓ FDQC system ready!")
 ```
 
 ### Validation Checklist
@@ -320,6 +399,10 @@ pytest tests/
 - [x] Crisis detection statistical
 - [x] Consciousness integrated
 - [ ] β parameter validated (requires PET study)
+
+### Troubleshooting
+
+For common issues and solutions, see **TROUBLESHOOTING.md**
 
 ---
 
@@ -398,18 +481,40 @@ def hebbian_update(self, pre, post, lr=0.01):
 
 ### Current Limitations
 
-1. **Encoding**: Uses simple projection (not trained neural networks)
-2. **Action Execution**: Placeholder (no physical embodiment)
-3. **Language**: Simple hash-based encoding (not LLM)
-4. **β Parameter**: Fitted, not measured (requires PET validation)
+| Limitation | Impact | Workaround |
+|------------|--------|-----------|
+| **Simple encoders** | No deep feature learning | Use pre-trained embeddings |
+| **Placeholder actions** | No physical embodiment | Simulate environment |
+| **Hash-based NLP** | Limited language understanding | Integrate with LLM API |
+| **β parameter fitted** | Requires empirical validation | Sensitivity analysis available |
+| **Single-agent** | No social cognition | Multi-instance possible |
 
 ### Future Improvements
 
-1. **Deep Learning Integration**: Replace encoders with CNNs/Transformers
-2. **Robotics**: Add physical embodiment
-3. **Natural Language**: Integrate with LLMs
-4. **Multi-Agent**: Add social cognition
-5. **Meta-Learning**: Learning to learn
+1. **Deep Learning Integration**
+   - Replace encoders with CNNs/Transformers
+   - Add pre-trained vision models
+   - Integrate language models
+
+2. **Physical Embodiment**
+   - Robotics integration
+   - Real-world sensors
+   - Continuous control
+
+3. **Social Cognition**
+   - Multi-agent interactions
+   - Theory of mind
+   - Communication protocols
+
+4. **Meta-Learning**
+   - Learning to learn
+   - Transfer learning
+   - Few-shot adaptation
+
+5. **Validation Studies**
+   - PET imaging for β
+   - Behavioral comparison with humans
+   - Large-scale benchmarks
 
 ---
 
@@ -421,15 +526,23 @@ MIT License - See LICENSE file for details.
 
 ## 🤝 Contributing
 
-Contributions welcome! Please:
+Contributions welcome! Areas for improvement:
 
+- **Deep learning encoders**: Replace simple projections with CNNs/Transformers
+- **Physical embodiment**: Robotics integration
+- **Natural language**: LLM integration
+- **Multi-agent systems**: Social cognition
+- **Meta-learning**: Learning to learn
+- **Additional sensory modalities**: Tactile, proprioceptive, etc.
+
+**Contribution Guidelines**:
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-**Guidelines**:
+**Requirements**:
 - Maintain biological grounding
 - Document parameter origins
 - No ad hoc values
@@ -448,17 +561,20 @@ If you use FDQC in your research, please cite:
   author={FDQC Research Team},
   year={2025},
   version={4.0.0},
-  url={https://github.com/yourrepo/conscious}
+  note={Complete implementation of a cognitive architecture with consciousness}
 }
 ```
 
 ---
 
-## 📧 Contact
+## 📧 Support & Documentation
 
-- **Issues**: [GitHub Issues](https://github.com/yourrepo/conscious/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourrepo/conscious/discussions)
-- **Email**: your.email@example.com
+- **Quick Start**: See `QUICK_START.md` for 5-minute tutorial
+- **Architecture**: See `ARCHITECTURE.md` for technical details
+- **Troubleshooting**: See `TROUBLESHOOTING.md` for common issues
+- **Index**: See `INDEX.md` for complete documentation guide
+- **Issues**: Use GitHub Issues for bug reports
+- **Discussions**: Use GitHub Discussions for questions
 
 ---
 
@@ -473,18 +589,72 @@ If you use FDQC in your research, please cite:
 
 ## 📊 Project Status
 
-✅ **COMPLETE** - v4.0.0
+### ✅ COMPLETE - v4.0.0
 
-- [x] Core cognitive architecture
-- [x] All subsystems integrated
-- [x] Parameter cleanup complete
-- [x] Documentation comprehensive
-- [x] Demos and visualizations
-- [x] Scientific rigor maintained
+| Component | Status | Documentation |
+|-----------|--------|--------------|
+| Core Architecture | ✅ Complete | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| All Subsystems | ✅ Integrated | [SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md) |
+| Parameter Cleanup | ✅ Done | [CODE_PARAMETER_CLEANUP_CHANGELOG.md](CODE_PARAMETER_CLEANUP_CHANGELOG.md) |
+| Documentation | ✅ Comprehensive | [INDEX.md](INDEX.md) |
+| Demos | ✅ 8 scenarios | [demos/full_demo.py](demos/full_demo.py) |
+| Examples | ✅ Available | [examples/simple_example.py](examples/simple_example.py) |
+| Visualization | ✅ Tools ready | [utils/visualization.py](utils/visualization.py) |
+| Tests | ✅ Validation | [run_tests.sh](run_tests.sh) |
 
 **This is a FULL, FUNCTIONAL AI system ready to use.**
 
+### 🔄 Active Development
+
+- [ ] Deep learning encoder integration
+- [ ] Extended validation studies
+- [ ] Multi-agent capabilities
+- [ ] Real-world deployment examples
+
 ---
 
-*Built with 🧠 by the FDQC Research Team*
-*January 2025*
+---
+
+## 📖 Additional Resources
+
+### Documentation Files
+
+| File | Purpose | When to Read |
+|------|---------|-------------|
+| [QUICK_START.md](QUICK_START.md) | 5-minute tutorial | Starting out |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Technical details | Deep dive |
+| [SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md) | Build summary | Understanding scope |
+| [INDEX.md](INDEX.md) | Navigation guide | Finding specific info |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common issues | Having problems |
+| [CODE_PARAMETER_CLEANUP_CHANGELOG.md](CODE_PARAMETER_CLEANUP_CHANGELOG.md) | Scientific rigor | Research purposes |
+
+### Getting Help
+
+1. **Quick questions**: Check [QUICK_START.md](QUICK_START.md)
+2. **Technical issues**: See [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+3. **Conceptual questions**: Read [ARCHITECTURE.md](ARCHITECTURE.md)
+4. **Finding features**: Use [INDEX.md](INDEX.md)
+5. **Bug reports**: Open GitHub Issue
+6. **Discussions**: Use GitHub Discussions
+
+---
+
+## 🌟 Star History
+
+If you find FDQC useful, please consider starring the repository!
+
+---
+
+## 📝 Version History
+
+- **v4.0.0** (October 2025) - Complete system with all subsystems integrated
+- Parameter cleanup and biological grounding complete
+- Full documentation and examples
+
+---
+
+*Built with 🧠 by the FDQC Research Team*  
+*Version 4.0.0 - October 2025*
+
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/)
+[![Powered by Neuroscience](https://img.shields.io/badge/Powered%20by-Neuroscience-green.svg)](#)
