@@ -1,0 +1,30 @@
+{
+  "name": "FDQC-Alpha",
+  "timestep": 4,
+  "episode_count": 0,
+  "current_capacity": 4,
+  "statistics": {
+    "total_timesteps": 4,
+    "total_episodes": 0,
+    "mean_capacity": 4.0,
+    "capacity_std": 0.0,
+    "episodic_memories": 1,
+    "semantic_memories": 0,
+    "mean_reward": 0.59999999999375,
+    "mean_valence": -0.00043890619308906186,
+    "mean_arousal": 0.09999999921998659,
+    "mean_dopamine": 0.5028106199139207,
+    "mean_td_error": 0.5981874999937797,
+    "mean_learning_rate": 0.015028106199139208,
+    "crisis_count": 0,
+    "crisis_rate": 0.0,
+    "mean_energy": 1.25e-10,
+    "total_energy": 5e-10
+  },
+  "history_length": 4,
+  "memory_stats": {
+    "episodic": 1,
+    "semantic": 0,
+    "working": 4
+  }
+}
